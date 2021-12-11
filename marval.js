@@ -8,14 +8,14 @@ const get = async (query) => {
 function throttle() {
   let query = document.getElementById("search").value;
   if (query.length > 2) {
-    let interval = setInterval(() => {
-      let tiem = setTimeout(() => {
+    let interval = setTimeout(() => {
+      let time = setTimeout(() => {
         console.log(query);
         get(query);
-        setTimeout(tiem);
-        clearInterval(interval);
+        setTimeout(time);
+        
       }, 200);
-      
+      clearTimeout(interval);
     }, 100);
   }
 
