@@ -7,7 +7,7 @@ const get = async (query) => {
 
 function throttle() {
   let query = document.getElementById("search").value;
-  if (query.length > 2) {
+  if (query.length >= 2) {
     let interval = setTimeout(() => {
       let time = setTimeout(() => {
         console.log(query);
@@ -29,7 +29,7 @@ async function search() {
   appendData(data);
 }
 function addPersonalData(item) {
-  //console.log("item is", item);
+  
   if (localStorage !== null) {
     localStorage.removeItem("character");
     localStorage.setItem("character", JSON.stringify(item));
